@@ -303,39 +303,9 @@ def return_sample_rate():
             .to_html()           
             , unsafe_allow_html=True)
 
+    st.markdown('')
+    st.error("""
+    It does not matter how large the difference is between consecutive rows, but the difference should be equal everywhere!
+    """)
+    st.markdown('Therefore, if there are many observations every second, resampling implies that the average of these measurements are taken for each second!')
 
-
-## Combine multiple table styles
-
-    # with col2:
-    #     st.table(pd.DataFrame({
-    #             'Time': ['21-12-21 10:00:00', '21-12-21 10:00:01','21-12-21 10:00:02','21-12-21 10:00:03'],
-    #             'Sensor1': [10, 10, 11, 10],
-    #             'Sensor2': [14,15,14,14]
-    #         }).style.set_table_styles([
-    #                         {
-    #                             "selector":"thead",
-    #                             "props": [("background-color", "dodgerblue"), ("color", "white"),
-    #                                       ("border", "3px solid red"),
-    #                                       ("font-size", "2rem"), ("font-style", "italic")],
-      
-    #                         },
-    #                         {
-    #                             "selector":"th.row_heading",
-    #                             "props": [("background-color", "orange"), ("color", "green"),
-    #                                       ("border", "3px solid black"),
-    #                                       ("font-size", "2rem"), ("font-style", "italic")]
-    #                         },
-    #                        {"selector":"caption",
-    #                         "props":[("text-align","center")],
-    #                        }
-
-    #                     ], overwrite=False)\
-    #                     .set_caption('test')\
-    #                     .set_table_styles({"Time" : [
-    #                                     {
-    #                                         "selector" :"td",
-    #                                         "props": "border: 2px solid red; color:green; background-color:yellow;"
-    #                                     }
-    #                                 ]
-    #                           }, overwrite=False))
