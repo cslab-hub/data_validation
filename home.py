@@ -10,7 +10,7 @@ def return_homepage():
     st.markdown('## Welcome to the Data Validation Tool!')
     st.markdown(
         """
-        ### The Data Validation tool consists of several chapters that each discuss a different aspect of validation your data.\n
+        ### The Data Validation tool consists of several chapters that each discuss a different aspect of validating your data.\n
         **👈 Select a Chapter from the dropdown menu on the left**""")
     
     # st.error("DISCLAIMER")

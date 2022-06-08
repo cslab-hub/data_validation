@@ -177,6 +177,7 @@ def return_column_names():
         
         st.warning("""Your data contains columns but are not identifyable by name.
                    Ask your data supplier for specific information about what each column/variable measures.
+                   This is necessary, since it is now not possible to interpret the data, since you do not know what each variable represents.
                    """)
     
     if option == 'heatsensor,1':

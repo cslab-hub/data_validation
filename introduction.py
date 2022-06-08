@@ -19,6 +19,12 @@ def return_introduction():
 
     Lastly, (3) maintenance and documentation can be challenging.
     """)
+
+    st.title('Goal of the tool')
+    st.markdown("""
+    As we have learned from our pilot phase, every company has widely different data formats retrieved from their machines/systems.
+    The goal of the Data Validation tool is to help you prepare your data for the Data Analytics tool.
+    """)
     st.title('Find a Text Editor.')
     st.markdown("""
             Before you start reading the chapters, we advice to install a text editor to examine your data.
