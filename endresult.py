@@ -9,8 +9,8 @@ def return_endresult():
     st.title('End result')
 
     st.markdown('''
-    The end result of your dataset should look like the followingg. \n
-    (1) There should be one variable that determines the time for all variables, which is shown here as "Time". \\
+    The end result of your dataset should look like the following. \n
+    (1) There should be one variable that determines the time for all variables, which is shown here as "Time". \n
     (2) All variables in your dataset should have a measurement at each moment in time of this "Time" variable, there are no missing values.
     ''')
 
