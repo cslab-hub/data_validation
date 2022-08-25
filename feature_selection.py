@@ -10,13 +10,13 @@ from statsmodels.tsa.stattools import grangercausalitytests
 
 def return_feature_selection():
     
-    hide_table_row_index = """
-            <style>
-            tbody th {display:none}
-            .blank {display:none}
-            </style>
-            """
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
+    # hide_table_row_index = """
+    #         <style>
+    #         tbody th {display:none}
+    #         .blank {display:none}
+    #         </style>
+    #         """
+    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
     
     st.title('Create Correlation plots')
     
@@ -26,9 +26,11 @@ def return_feature_selection():
     In other words, if two variables have a high correlation, we can drop on of the two!
     """)
     import pandas as pd
-    iris_correlation = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
-    iris_correlation = iris_correlation.iloc[:,:4]
-    iris_correlation.columns = ['temperature1','temperature2','temperature3','temperature4']
+    # iris_correlation = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
+    iris_correlation = pd.read_csv('data/iris.csv')
+    iris_correlation.insert(0,'Time', pd.date_range(start='1/1/2018', periods=iris_correlation.shape[0], freq='T'))
+    # iris_correlation = iris_correlation.iloc[:,:4]
+    iris_correlation.columns = ['Time','temperature1','temperature2','temperature3','temperature4']
     st.table(iris_correlation.head(5).style.format(precision=2)\
         .set_table_styles([
                         {"selector":"caption",

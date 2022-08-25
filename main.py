@@ -23,7 +23,8 @@ from interactive_test import *
 st.set_page_config(
      page_title="Data Validation",
     #  page_icon="🧊",
-     layout="wide",
+    #  layout="wide",
+    layout='centered'
     #  initial_sidebar_state="expanded",
 )
 

@@ -43,15 +43,6 @@ def return_descriptives():
     col1, col2, col3 = st.columns([1,5,1])
 
     with col2:
-        # st.table(dataframe.style.set_table_styles([
-        #                         {"selector":"caption",
-        #                         "props":[("text-align","center")],
-        #                         }
-
-        #                         ], overwrite=False)\
-
-        #         .set_caption('Table 1.'))
-
         st.write(dataframe.style.set_table_styles([
                         {"selector":"caption",
                         "props":[("text-align","center"),("caption-side","top")],
@@ -87,7 +78,7 @@ def return_descriptives():
             .to_html()           
             , unsafe_allow_html=True)
 
-
+    st.write('')
     st.markdown("""
                 It is possible to learn a lot about the dataset by inspecting these summary statistics.
                 For example, we can already see that the variable called: 'var4' does not deviate in measurement.
@@ -99,15 +90,6 @@ def return_descriptives():
     col1, col2, col3 = st.columns([1,5,1])
     
     with col2:
-        # st.table(dataframe.describe().apply(lambda s: s.apply('{0:.2f}'.format)).style.set_table_styles([
-        #                         {"selector":"caption",
-        #                         "props":[("text-align","center")],
-        #                         }
-
-        #                         ], overwrite=False)\
-
-        #         .set_caption('Table 2.'))
-
         st.write(dataframe.describe().style.set_table_styles([
                         {"selector":"caption",
                         "props":[("text-align","center"),("caption-side","top")],
@@ -127,19 +109,6 @@ def return_descriptives():
 
             .set_caption('Table 2: Descriptives of the dataset.')\
             .format(precision=2)\
-            # .hide_index()\
-            # .set_table_styles({"Time" : [
-            #                 {
-            #                     "selector" :"th",
-            #                     "props": "background-color:lightgreen;"
-            #                 },
-            #                 {
-            #                     "selector" :"td",
-            #                     "props": "background-color:lightgreen;"
-            #                 }
-            #             ]
-            #         }, overwrite=False)\
-            # .applymap(lambda x: "background-color: lightgreen", subset="var1")\
             .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
@@ -173,16 +142,15 @@ def return_descriptives():
                 These values all are of different kinds. For example, 'var3' is measuring a numerical value with decimals.
                 On the other hand, 'var4' is measuring a numerical value of whole numbers. 
                 In addition, 'var5' is measuring a word which does not resemble numbers. 
+                \n
+                You should ask yourself wether some variables should remain in your dataset.
+                Most often, 'word' based variables often resembles categorical variables, which could be target variables you want to predict.
+                E.g., your data contains an variable with the values = ['damage','no-damage'], where you want to predict if your product had damage or not, based on sensor values.
+                In that case, you would like to keep this variable in your dataset.
+                However, if your data contains a variable with non-valuable categorial data, you could remove it.
+                It is, therefore, always up to you to decide what should remain and what should be removed!
                 """)
 
-    # st.table(dataframe.head(2).style.set_table_styles([
-    #                     {"selector":"caption",
-    #                     "props":[("text-align","center")],
-    #                     }
-
-    #                     ], overwrite=False)\
-
-    #         .set_caption('Table 3.'))
 
     st.write(dataframe.head(2).style.set_table_styles([
                         {"selector":"caption",

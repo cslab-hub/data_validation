@@ -11,7 +11,22 @@ def return_homepage():
     st.markdown(
         """
         ### The Data Validation tool consists of several chapters that each discuss a different aspect of validating your data.\n
-        **👈 Select a Chapter from the dropdown menu on the left**""")
+        """)
+        
+    st.markdown("""
+    - The Introduction page explains the goals of the tool, and some initial tips to get started
+    - The file format chapter will ask you several questions about your data format, which is crucial in data science.
+    - Chapter 2: Column names. This chapter will give tips on giving your variables correct names.
+    - Chapter 3: Amount of Variables: This chapter gives tips on determining an ideal dataset size.
+    - Chapter 4: Sample Rate: This chapter gives insight in diffferent types of samples rates, i.e., the time between observations in your dataset.
+    - Chapter 5: Descriptives: Provides tips for quickly investigating data, and also knowing what kind of data types are present in your dataset.
+    - Chapter 6: Outliers: Explains various kinds of outliers which could exist in your dataset, and how to handle them.
+    - Chapter 7: Missing Values and Data Imputation: This chapter explains how to handle missing values or missing variables.
+    - Chapter 8: Feature Selection: This chapter explains two techniques to reduce the number of variables in your dataset.
+    - Chapter 9: Shows the data format that is needed to usage in the Data Analytics tool.
+    """) 
+        
+    st.markdown("""**👈 Select a Chapter from the dropdown menu on the left**""")
     
     # st.error("DISCLAIMER")
     with st.expander("See Disclaimer"):
