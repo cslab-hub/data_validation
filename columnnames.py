@@ -83,7 +83,7 @@ def return_column_names():
         st.subheader('Here are some tips to improve readability:')
         
         # st.error('Error Message')
-        st.success('Tip 1: Only use upper of lowercase letters')
+        st.success('Tip 1: Only use upper or lowercase letters')
         st.success('Tip 2: Try to only use English variable names for generalizability with international colleagues')
         st.success("""Tip 3: Try to map each variable to a specific process. 
                    For example, perhaps Ex2Var29_i2 means the pressure in a specific instrument in your machinery.
