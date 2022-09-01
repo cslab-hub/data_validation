@@ -12,7 +12,7 @@ def return_number_of_variables():
     For example, which variables should reasonably affect your response?
 
     Therefore, it is critical the reduce the number of variables in your dataset if there are too many available.
-    Since most readers of this tool will have data originating from industry, most likely your dataset if big!
+    Since most readers of this tool will have data originating from industry, most likely your dataset is big!
     Therefore, here select the number of variables in your dataset:
     """)
     option = st.selectbox(

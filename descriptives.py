@@ -109,7 +109,7 @@ def return_descriptives():
 
             .set_caption('Table 2: Descriptives of the dataset.')\
             .format(precision=2)\
-            .hide(axis='index')\
+            # .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
 
