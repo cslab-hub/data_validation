@@ -29,7 +29,7 @@ st.set_page_config(
 )
 
 st.sidebar.image("images/logo.jpeg", use_column_width=True)
-st.sidebar.image("images/jadslogo.png", use_column_width=True)
+# st.sidebar.image("images/jadslogo.png", use_column_width=True)
 st.sidebar.title("Select Chapter")
 st.sidebar.markdown("Each chapter explains a different aspect of validating your dataset.")
 
