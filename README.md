@@ -9,5 +9,5 @@ Link to [Website](https://cslab-hub-data-validation-main-bx6ggw.streamlitapp.com
 
 
  <p align="center">
-    <img src="./di-plast-logo.png", height="500">
+    <img src="./di-plast-logo.png", width = "300", height="500">
  </p>
