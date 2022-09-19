@@ -29,7 +29,7 @@ st.set_page_config(
 )
 
 st.sidebar.image("images/logo.jpeg", use_column_width=True)
-# st.sidebar.image("images/jadslogo.png", use_column_width=True)
+
 st.sidebar.title("Select Chapter")
 st.sidebar.markdown("Each chapter explains a different aspect of validating your dataset.")
 
@@ -90,3 +90,7 @@ hide_st_style = """
     </style>
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+st.sidebar.image("images/jadslogo.png", use_column_width=True)
+
+st.sidebar.caption("[Bug reports and suggestions welcome ](mailto:s.d.bloemheuvel@jads.nl)")
