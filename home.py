@@ -32,7 +32,7 @@ def return_homepage():
     with st.expander("See Disclaimer"):
 
         st.write("""
-                Disclaimer of Warranty.
+                ##### Disclaimer of Warranty.
                 
                 There is no warranty for the program, to the extent permitted by applicable law. 
                 except when otherwise stated in writing the copyright holders and/or other parties provide the program “as is” without warranty of any kind, either expressed or implied, 
@@ -40,7 +40,7 @@ def return_homepage():
                 the entire risk as to the quality and performance of the program is with you. 
                 should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
 
-                Limitation of Liability.
+                ##### Limitation of Liability.
                 
                 In no event unless required by applicable law or agreed to in writing will any copyright holder, or any other party who modifies and/or conveys the program as permitted above, 
                 be liable to you for damages, including any general, special, 
