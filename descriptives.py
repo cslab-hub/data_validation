@@ -18,7 +18,7 @@ def return_descriptives():
     st.title('Descriptives of your dataset')
     
     st.markdown("""
-                It is also to check the initial descriptives of your dataset.
+                It is also important to check the initial descriptives of your dataset.
                 There are several ways to achieve this. 
                 For example, consider the following dataset:
                 """)
@@ -203,11 +203,11 @@ def return_descriptives():
     st.title('Unit of Measurements')
     st.markdown("""
     In order to draw correct conclusions from your data, the accuracy of your measurements and calculations are crucial.
-    Measureing means measuring a comparison between standardized units and an unknown size.
+    Measuring means measuring a comparison between standardized units and an unknown size.
     Without mentioning the standard unit to which the unknown is compared, the numbers in your dataset itself are meaningless.
     Therefore, we advice to find out the unit of measurement of every variable in your dataset.
     Some variables might be easy to interpet, e.g., temperature.
-    However, some variables are a combinations of several units (pressure, rotation speeds).
+    However, some variables are a combination of several units (pressure, rotation speeds).
     Here, errors are easier made if not taken caution.
     For example, if the rotation per minute is measured but you think it means rotation per second, further on calculations could be wrongly interpreted.
     Therefore:
