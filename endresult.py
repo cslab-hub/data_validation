@@ -42,3 +42,9 @@ def return_endresult():
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #fef4d5; border-color: #fef4d5;">
                 The Process Analytics tool expects this data format, in order to make it general for multiple companies to use.
                 </div>""", unsafe_allow_html=True)
+    
+    col1,col2,col3 = st.columns([1,5,1])
+    with col2:
+        st.image('images/data_in_excel.png', caption='How Table 1 looks like in Excel')
+    
+        st.image('images/exportcsv.png', caption='How to export from Excel to CSV')

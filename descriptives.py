@@ -37,8 +37,10 @@ def return_descriptives():
     dataframe['var2'] = dataframe['var1'] + np.random.randint(10,size=9)
     dataframe['var3'] = 1 + np.random.uniform(low=0.0001, high=0.1,size=9)
     dataframe['var4'] = 3
-    dataframe['var5'] = 'one'
-    dataframe = dataframe[['Time','var2','var3','var4','var5']]
+    # dataframe['var5'] = 'one'
+    # dataframe = dataframe[['Time','var2','var3','var4','var5']]
+    
+    dataframe = dataframe[['Time','var2','var3','var4']]
 
     col1, col2, col3 = st.columns([1,5,1])
 
