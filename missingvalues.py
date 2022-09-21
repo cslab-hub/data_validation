@@ -17,7 +17,7 @@ def return_missing_values():
     # st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 
-    st.title('It could occur that various variables did not measured all time points.')
+    st.title('It could occur that various variables did not measure all time points.')
 
     st.markdown("""
     Missing data can be a serious issue for the quality of your dataset.
@@ -32,10 +32,9 @@ def return_missing_values():
 
     st.markdown('### Mising Completely at Random')
     st.markdown("""
-    When the data is missing completely at random, we say that there is no relationship wether a data point is missing and others observations in the dataset.
-    A simple way to check for missing data is by filtering a dataset on several assumptions, and check wether there are more missing values in one of them.
+    When the data is missing completely at random, we say that there is no relationship whether a data point is missing and other observations in the dataset.
+    A simple way to check for missing data is by filtering a dataset on several assumptions, and check whether there are more missing values in one of them.
     If you data is missing completely at random, there should be no difference!
-    
     """)
 
     # st.markdown('### Missing at Random')

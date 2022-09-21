@@ -185,7 +185,6 @@ def return_outliers():
 
     - Point-wise Outliers
     - Pattern-wise Outliers
-    - System-wise Outliers
     ''')
 
     st.markdown('### Point-wise Outliers')
@@ -262,46 +261,4 @@ def return_outliers():
     st.pyplot(pattern_wise_figure_2)
 
 
-    st.markdown('### System-wise Outliers')
-    st.markdown('''
-    System-wise outliers are only visible when compared against other variables in it's 'system'.
-    For example, the following plot shows one 'ideal' variable colored in blue, and two variables (in green and orange) that have a more chaotic nature.
-
-    ''')
-    t = np.linspace(0.0, 19, 100)       # time axis
-    sig = np.sin(t)
-    # random.uniform(0, 1)
-    import random
-    from matplotlib.ticker import MaxNLocator
-    sig2 = [i + random.uniform(0, 0.3) for i in sig]
-    sig3 = [i - random.uniform(0, 0.3) for i in sig]
-
-    def system_wise_plot():
-        # fig = plt.figure()
-        fig5, ax = plt.subplots(figsize=(16,6))
-        ax.xaxis.set_major_locator(MaxNLocator(integer=True))
-        t = np.linspace(0, 19, 100)       # time axis
-        sig = np.sin(t)
-        # random.uniform(0, 1)
-        sig2 = [i + random.uniform(0, 0.3) for i in sig]
-        sig3 = [i - random.uniform(0, 0.3) for i in sig]
-
-        plt.plot(t,sig, linewidth=3)
-        plt.plot(t,sig2,linewidth=3)
-        plt.plot(t,sig3,linewidth=3)
-        plt.title("Figure 6: Spotted System-Wise Outliers", fontsize=24)
-        plt.xlabel("Time (seconds)", fontsize=22)
-        plt.ylabel("Value", fontsize=22)
-        plt.xticks(fontsize=20)
-        plt.yticks(fontsize=20)
-
-        for axis in ['top','bottom','left','right']:
-            ax.spines[axis].set_linewidth(1.5)
-            ax.spines[axis].set_color("black")
-            ax.spines[axis].set_zorder(0)
-        ax.tick_params('both', length=10, width=2, which='major')
-
-        return fig5
-
-    system_wise_plot_fig = system_wise_plot()
-    st.pyplot(system_wise_plot_fig)
+    
