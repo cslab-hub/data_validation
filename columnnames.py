@@ -5,14 +5,6 @@ from PIL import Image
 
 def return_column_names():
 
-    # hide_table_row_index = """
-    #         <style>
-    #         tbody th {display:none}
-    #         .blank {display:none}
-    #         </style>
-    #         """
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    
     st.title('Open the dataset in your program by choice. What do the variable names look like?')
     
     st.markdown("""
@@ -82,29 +74,12 @@ def return_column_names():
         
         st.subheader('Here are some tips to improve readability:')
         
-        # st.error('Error Message')
         st.success('Tip 1: Only use upper or lowercase letters')
         st.success('Tip 2: Try to only use English variable names for generalizability with international colleagues')
         st.success("""Tip 3: Try to map each variable to a specific process. 
                    For example, perhaps Ex2Var29_i2 means the pressure in a specific instrument in your machinery.
                    The variable could then be named Pressure_instrument_1.""")
         
-        
-        # Advanced
-        # html_temp = """
-        # <div style="background-color:tomato;padding:10px">
-        # <h2 style="color:white;text-align:center;">Markdown html Example </h2>
-        # </div>
-        # """
-        # st.markdown(html_temp,unsafe_allow_html=True)
-        
-        
-        # st.markdown(
-        #     '<span class="badge badge-pill badge-success"> Badge </span>',
-        #     unsafe_allow_html=True
-        # )
-
-
     if option == 'Heat_sensor1':
         st.write(pd.DataFrame({
                 'Heat_sensor1': [1.21, 1.25, 1.31, 1.27],
@@ -127,7 +102,6 @@ def return_column_names():
 
                         ]).set_caption("Table 2: Random Dataset.")\
                         .format(precision=2)\
-                        # .hide_index()\
                         .hide(axis='index')\
                         .to_html()           
                         , unsafe_allow_html=True)
@@ -186,8 +160,6 @@ def return_column_names():
         e_dataframe.columns = ['heatsensorA,1','heatsensorB,2']
         
         
-        # st.table(e_dataframe.style.format('{:.2f}'))
-        
         st.error("""Your dataset could be read wronly if the delimiter of your dataset is a comma.
         What then happens is that the dataset will be split into the following dataset:
                    """)
@@ -195,9 +167,7 @@ def return_column_names():
         e_2 = e_dataframe.copy(deep = True)
         e_2['var1'] = e_2['heatsensorA,1']+2
         e_2['var2'] = e_2['heatsensorB,2']-1
-        print(e_2.shape)
         e_2.columns = ['heatsensorA','1','heatsensorB','2']
-        # st.table(e_2.style.format('{:.2f}'))
         st.table(e_2)
 
         st.markdown('''

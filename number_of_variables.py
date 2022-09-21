@@ -57,9 +57,6 @@ def return_number_of_variables():
     It could occur that while performing this step on your own computer, you notice that specific variables you are interested in are not visible.
     If this occurs, we advice to ask for help with another tool in our Di-Plast project, called the [Sensoring tool](https://share.streamlit.io/skz-digi/diplastsensorselection/updated/main.py).
     ''')
-    # st.empty()
-    
-    # st.success('Tip 1: Check descriptives to find set variables')
     
     
     

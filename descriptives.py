@@ -7,14 +7,6 @@ from PIL import Image
 
 def return_descriptives():
 
-    # hide_table_row_index = """
-    #         <style>
-    #         tbody th {display:none}
-    #         .blank {display:none}
-    #         </style>
-    #         """
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    
     st.title('Descriptives of your dataset')
     
     st.markdown("""
@@ -22,12 +14,10 @@ def return_descriptives():
                 There are several ways to achieve this. 
                 For example, consider the following dataset:
                 """)
-    # st.success('Tip: Calculate the Mean, ST.Dev, Variance, Min & Max of each variable in your dataset.')
 
     index = pd.date_range('1-1-2000', periods=9, freq='T')
     series = pd.Series(range(1,10), index=index)
     dataframe = pd.DataFrame(series, columns=['Measurement'])
-    # dataframe = dataframe.style.format({'date': lambda x: "{}".format(x.strftime('%m/%d/%Y %H:%M:%S'))}).set_table_styles('styles')
     dataframe = dataframe.reset_index()
     dataframe.columns = ['Time','var1']
     dataframe["Time"] = pd.to_datetime(dataframe["Time"])
@@ -37,8 +27,6 @@ def return_descriptives():
     dataframe['var2'] = dataframe['var1'] + np.random.randint(10,size=9)
     dataframe['var3'] = 1 + np.random.uniform(low=0.0001, high=0.1,size=9)
     dataframe['var4'] = 3
-    # dataframe['var5'] = 'one'
-    # dataframe = dataframe[['Time','var2','var3','var4','var5']]
     
     dataframe = dataframe[['Time','var2','var3','var4']]
 
@@ -63,7 +51,6 @@ def return_descriptives():
                         ], overwrite=False)\
 
             .set_caption('Table 1: Sample dataset.')\
-            # .hide_index()\
             .set_table_styles({"Time" : [
                             {
                                 "selector" :"th",
@@ -75,7 +62,6 @@ def return_descriptives():
                             }
                         ]
                     }, overwrite=False)\
-            # .applymap(lambda x: "background-color: lightgreen", subset="var1")\
             .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
@@ -111,7 +97,6 @@ def return_descriptives():
 
             .set_caption('Table 2: Descriptives of the dataset.')\
             .format(precision=2)\
-            # .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
 
@@ -172,7 +157,6 @@ def return_descriptives():
                         ], overwrite=False)\
 
             .set_caption('Table 3: Sample dataset.')\
-            # .hide_index()\
             .set_table_styles({"Time" : [
                             {
                                 "selector" :"th",
@@ -185,8 +169,6 @@ def return_descriptives():
                         ]
                     }, overwrite=False)\
             .hide(axis='index')\
-            # .applymap(lambda x: "background-color: lightgreen", subset="var1")\
-           
             .to_html()           
             , unsafe_allow_html=True)
 
@@ -196,7 +178,6 @@ def return_descriptives():
     dtype_df['VariableType'] = dtype_df['VariableType'].astype(str)
     dtypefig, dtypeax = plt.subplots(figsize=(8,4))
     dtypeax.set_yticks(np.arange(0,3,1))
-    # fig.set_size_inches(24.5, 16.5)
     dtypeax.bar(dtype_df['VariableType'],dtype_df['Count'])
     st.pyplot(dtypefig)
 

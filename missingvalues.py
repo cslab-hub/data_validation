@@ -8,14 +8,6 @@ from PIL import Image
 def return_missing_values():
     
     html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/data_validation/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
-    # hide_table_row_index = """
-    #         <style>
-    #         tbody th {display:none}
-    #         .blank {display:none}
-    #         </style>
-    #         """
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
-
 
     st.title('It could occur that various variables did not measure all time points.')
 
@@ -37,25 +29,18 @@ def return_missing_values():
     If you data is missing completely at random, there should be no difference!
     """)
 
-    # st.markdown('### Missing at Random')
-    
-    # st.markdown("It is very likely that one of the first variables in your dataset looks like the following:")
-    
     # Create sample dataframe with resample example
     index = pd.date_range('1-1-2000', periods=9, freq='T')
     series = pd.Series(range(1,10), index=index)
     dataframe = pd.DataFrame(series, columns=['Measurement'])
-    # dataframe = dataframe.style.format({'date': lambda x: "{}".format(x.strftime('%m/%d/%Y %H:%M:%S'))}).set_table_styles('styles')
     dataframe = dataframe.reset_index()
     dataframe.columns = ['Time','var1']
     dataframe["Time"] = pd.to_datetime(dataframe["Time"])
     dataframe["Time"] = dataframe["Time"].dt.strftime("%Y-%m-%d %H:%M:%S")
     
-    # df_values = dataframe.rolling(2).mean() 
     df_values = dataframe.rolling(2, on='Time').mean()
     df = dataframe.iloc[::2, :]
     df['var1'] = df_values['var1']
-    # df.drop('Measurement')
     df = df.iloc[0:,:]
 
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #ffdbdb; border-color: #ffbebe;">
@@ -71,31 +56,11 @@ def return_missing_values():
 
     """)
     inconsistent_df = dataframe.copy(deep = True)
-    # inconsistent_df['var2'] = ["1","2","","4","5","","7","8","9"]
     inconsistent_df['var2'] = [1,2,np.nan,4,5,np.nan,7,8,9]
     inconsistent_df['var3'] = [1,np.nan,3,4,np.nan,6,np.nan,8,9]
 
-    # inconsistent_df['var3'] = ["1","","3","4","","6","","8","9"]
-
-    # col1, col2, col3 = st.columns([1,6,1])
-    # with col2:
-    #     st.table(inconsistent_df)
-    #     inconsistent_df['var2'] = inconsistent_df['var2'].interpolate().astype(int)
-    #     inconsistent_df['var3'] = inconsistent_df['var3'].interpolate().astype(int)
-
-    #     st.table(inconsistent_df)
-
     col1, col2, col3 = st.columns([1,6,1])
     with col2:
-        # st.table(inconsistent_df.style.highlight_null(null_color="tomato")\
-        #     .set_table_styles([
-        #                 {"selector":"caption",
-        #                 "props":[("text-align","center")],
-        #                 }
-
-        #                 ], overwrite=False)\
-
-        #     .set_caption('Table 3.'))
 
         st.write(inconsistent_df.style.set_table_styles([
                         {"selector":"caption",
@@ -113,10 +78,8 @@ def return_missing_values():
 
                         ]).highlight_null(null_color='tomato').format(precision=0)\
                         .set_caption("Table 1: Dataset with random numbers missing.")\
-                        # .hide_index()\
                         .hide(axis='index')\
                         .to_html()\
-                        # .highlight_null(null_color='tomato')
                         , unsafe_allow_html=True)
 
 
@@ -130,14 +93,6 @@ def return_missing_values():
     with col2:
         inconsistent_df['var2'] = inconsistent_df['var2'].interpolate().astype(int)
         inconsistent_df['var3'] = inconsistent_df['var3'].interpolate().astype(int)
-        # st.table(inconsistent_df.style.set_table_styles([
-        #                 {"selector":"caption",
-        #                 "props":[("text-align","center")],
-        #                 }
-
-        #                 ], overwrite=False)\
-
-        #     .set_caption('Table 4.'))
 
         st.write(inconsistent_df.style.set_table_styles([
                         {"selector":"caption",
@@ -155,10 +110,8 @@ def return_missing_values():
 
                         ]).highlight_null(null_color='tomato').format(precision=0)\
                         .set_caption("Table 2: Dataset the measurements imputed.")\
-                        # .hide_index()\
                         .hide(axis='index')\
                         .to_html()\
-                        # .highlight_null(null_color='tomato')
                         , unsafe_allow_html=True)
 
 
@@ -176,10 +129,7 @@ def return_missing_values():
                 Bad Example 2: Each variable started recording at different timepoints.
                 </div>""", unsafe_allow_html=True)
     inconsistent_df = dataframe.copy(deep = True)
-    # inconsistent_df['var2'] = [np.nan, np.nan, np.nan,"4","5","6","7","8","9"]
     inconsistent_df['var2'] = [np.nan, np.nan, np.nan,4,5,6,7,8,9]
-
-    # inconsistent_df['var3'] = [np.nan,np.nan,np.nan,np.nan,"5","6","7","8","9"]
     inconsistent_df['var3'] = [np.nan,np.nan,np.nan,np.nan,5,6,7,8,9]
 
 
@@ -187,15 +137,6 @@ def return_missing_values():
 
     col1, col2, col3 = st.columns([1,6,1])
     with col2:
-        # st.table(inconsistent_df.style.highlight_null(null_color="tomato")\
-        #     .set_table_styles([
-        #                 {"selector":"caption",
-        #                 "props":[("text-align","center")],
-        #                 }
-
-        #                 ], overwrite=False)\
-
-        #     .set_caption('Table 1.'))
 
         st.write(inconsistent_df.style.set_table_styles([
                         {"selector":"caption",
@@ -213,17 +154,14 @@ def return_missing_values():
 
                         ]).highlight_null(null_color='tomato').format(precision=0)\
                         .set_caption("Table 3: Dataset with non-random numbers.")\
-                        # .hide_index()\
                         .hide(axis='index')\
                         .to_html()\
-                        # .highlight_null(null_color='tomato')
                         , unsafe_allow_html=True)
 
     col1, col2, col3 , col4, col5 = st.columns(5)
 
     with col3 :
         st.markdown('')
-        # st.image(image, width =75)
 
         html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/data_validation/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
         st.write(html_arrow, unsafe_allow_html=True)
@@ -246,10 +184,8 @@ def return_missing_values():
 
                         ]).highlight_null(null_color='tomato').format(precision=0)\
                         .set_caption("Table 4: Dataset with missing measurements removed.")\
-                        # .hide_index()\
                         .hide(axis='index')\
                         .to_html()\
-                        # .highlight_null(null_color='tomato')
                         , unsafe_allow_html=True)
 
     

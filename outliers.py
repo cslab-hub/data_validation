@@ -1,22 +1,17 @@
 #%%
 import streamlit as st
 import pandas as pd
-# pd.set_option('mode.chained_assignment', None)
 import numpy as np
 from PIL import Image 
 import matplotlib.pyplot as plt 
-# from sklearn.neighbors import LocalOutlierFactor
 
 data = pd.read_csv('https://raw.githubusercontent.com/DHI/tsod/main/tests/data/example.csv')
 data.to_csv('data/anomaly.csv', index=None)
-# fig = plt.plot(data['value'])
 
 #%%
 def first_plot(data, title):
-    # fig = plt.figure()
 
     fig, ax = plt.subplots(figsize=(16,6))
-    # ax.plot(data['value'])
 
     plt.scatter(data.index, data['value'], c='b', s=75)
     plt.plot(data.index, data['value'], linewidth=3)
@@ -40,11 +35,8 @@ def first_plot(data, title):
 
     return fig
 
-# fig, ax = plt.subplots()
-# ax.plot(data['value'])
 fig1 = first_plot(data, 'Figure 1: Plotted Data')
 #
-# new plot with anomalies
 #%%
 data = pd.read_csv('https://raw.githubusercontent.com/DHI/tsod/main/tests/data/example.csv')
 q_low = data["value"].quantile(0.05)
@@ -61,46 +53,19 @@ og_set = set(data.index.to_list())
 new_set = set(df_filtered.index.tolist())
 og_set - new_set
 
-# filtered_df_values = pd.DataFrame(data.loc[og_set - new_set])
 filtered_df_values = pd.DataFrame(data.iloc[list(og_set - new_set),:])
 
 filtered_df_values = filtered_df_values.sort_values('datetime')
-# with pd.option_context('mode.chained_assignment', None):
-    # data[data.bidder == 'parakeet2004']['bidderrate'] = 100
 filtered_df_values['identifier'] = 'r'
 final_df = df_filtered.combine_first(filtered_df_values)
 
 #%%
 final_df['value_grp'] = (final_df['value'].diff(1) != 0).astype('int')
-# final_df.plot(x='datetime',y='value_grp')
-# final_df[final_df['value_grp'] == 0, 'value_grp'] = 'r'
 final_df.loc[final_df["value_grp"] == 0, "value_grp"] = 'r'
 final_df.loc[final_df["value_grp"] == 1, "value_grp"] = 'b'
 
-# final_df.loc[final_df["value_grp_seq"] == 0, "value_grp"] = 'b'
-# final_df.loc[final_df["value_grp_seq"] == 1, "value_grp"] = 'r'
-
-# print( 'value counts = ',final_df['value_grp_seq'].value_counts())
 final_df.iloc[78:88,3] = 'r'
 
-final_df.iloc[78:90,:]
-#%%
-# fig2, ax = plt.subplots()
-
-# ax.scatter(data=final_df, x='datetime', y='value', c='identifier', cmap='Set3')
-# ax.set(title='', xlabel='Time', ylabel='')
-
-# ax.axes.xaxis.set_ticklabels([0,20,40,60,80,100,120])
-# ax.set_xticks([0,20,40,60,80,100,120])
-
-#%%
-# fig3 = plt.Figure()
-# plt.scatter(final_df.index, final_df['value'],c=final_df['identifier'],)
-# plt.plot(final_df.index, final_df['value'])
-# plt.title("Spotted Outliers")
-# plt.xlabel("Time")
-# plt.ylabel("Value")
-# plt.show()
 
 def outlier_spotter(title_set):
     # fig = plt.figure()
@@ -135,11 +100,9 @@ outliers_removed = outliers_removed[outliers_removed['identifier'] == 'b']
 third_fig = first_plot(outliers_removed, 'Figure 3: Outliers Removed')
 #%%
 def pattern_wise_plot(title_set):
-    # fig = plt.figure()
     fig4, ax = plt.subplots(figsize=(16,6))
     plt.scatter(final_df.index, final_df['value'],c=final_df['value_grp'], s=75)
     plt.plot(final_df.index, final_df['value'], linewidth=3)
-    # plt.title("Figure 4: Spotted Pattern-Wise Outliers")
     plt.xlabel("Time")
     plt.ylabel("Value")
 
@@ -159,9 +122,9 @@ def pattern_wise_plot(title_set):
 
 pattern_wise_fig = pattern_wise_plot(title_set="Figure 4: Spotted Pattern-Wise Outliers")
 
-# outliers_removed = final_df.copy(deep=True)
 
 pattern_wise_df = final_df[final_df['value_grp'] == 'b']
+pattern_wise_df = pattern_wise_df.reset_index()
 pattern_wise_figure_2 = first_plot(pattern_wise_df, 'Figure 5: Pattern-Wise Outliers Removed')
 
 # final_df.iloc[78:90,:]
@@ -169,14 +132,6 @@ pattern_wise_figure_2 = first_plot(pattern_wise_df, 'Figure 5: Pattern-Wise Outl
 
 def return_outliers():
 
-    # hide_table_row_index = """
-    #         <style>
-    #         tbody th {display:none}
-    #         .blank {display:none}
-    #         </style>
-    #         """
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    
     st.title('Outlier detection')
     
     st.markdown('''
@@ -236,7 +191,6 @@ def return_outliers():
                 """)
     
     st.pyplot(first_fig)
-    # st.pyplot(fig3)
 
     st.markdown("""
                 The following Figure shows the same data, but with the outliers removed:        
@@ -258,6 +212,7 @@ def return_outliers():
     ''')
     
     st.pyplot(pattern_wise_fig)
+    st.markdown('Notice that by removing these observasions also influenced the x-axis of the plot, because observations are removed.')
     st.pyplot(pattern_wise_figure_2)
 
 

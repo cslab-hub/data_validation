@@ -5,13 +5,6 @@ from PIL import Image
 
 def return_file_format():
 
-    # hide_table_row_index = """
-    #         <style>
-    #         tbody th {display:none}
-    #         .blank {display:none}
-    #         </style>
-    #         """
-    # st.markdown(hide_table_row_index, unsafe_allow_html=True)
     st.title('File Formats')
 
     st.markdown("""
@@ -82,8 +75,6 @@ def return_file_format():
         st.error('Better data formats are available depending on your goals!')
 
         col1, col2, col3 = st.columns([1,2.5,1])
-        # with col1:
-        #     st.write("")
 
         with col2:
             image = Image.open('images/excel_example.png')

@@ -217,8 +217,6 @@ def return_sample_rate():
     dataframe["Time"] = pd.to_datetime(dataframe["Time"])
     dataframe["Time"] = dataframe["Time"].dt.strftime("%Y-%m-%d %H:%M:%S")
     
-    # df_values = dataframe.rolling(2).mean() 
-    # df_values = dataframe.rolling(2).mean()
     df_values = dataframe.rolling(2, on='Time').mean()
     df = dataframe.iloc[::2, :]
     df['var1'] = df_values['var1']
@@ -246,7 +244,6 @@ def return_sample_rate():
                         ], overwrite=False)\
 
             .set_caption('Table 4: Measurements taken every minute.')\
-            # .hide_index()\
             .set_table_styles({"Time" : [
                             {
                                 "selector" :"th",
@@ -258,7 +255,6 @@ def return_sample_rate():
                             }
                         ]
                     }, overwrite=False)\
-            # .applymap(lambda x: "background-color: lightgreen", subset="var1")\
             .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
@@ -285,7 +281,6 @@ def return_sample_rate():
                         ], overwrite=False)\
 
             .set_caption('Table 5: Average Taken of every 2 minutes.')\
-            # .hide_index()\
             .set_table_styles({"Time" : [
                             {
                                 "selector" :"th",
@@ -298,7 +293,6 @@ def return_sample_rate():
                             }
                         ]
                     }, overwrite=False)\
-            # .applymap(lambda x: "background-color: lightgreen", subset="var1")\
             .hide(axis='index')\
             .to_html()           
             , unsafe_allow_html=True)
