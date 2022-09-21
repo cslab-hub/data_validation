@@ -16,7 +16,7 @@ def return_sample_rate():
     # st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 
-    html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/Data_Validation_DIPLAST/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
+    html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/data_validation/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
 
 
     st.title('Determine the Sample Rate')
