@@ -31,7 +31,7 @@ def return_number_of_variables():
     if option == '10-30':
         st.warning('You are in the safe zone, but keep in mind that the number of variables can be reduced further')
         st.markdown("""
-        If you dataset contains in the range of 10-30 variables there is a good chance that you have just enough variables to perform an analysis, but not too many which will make it hard to determine which variables to use.
+        If your dataset contains in the range of 10-30 variables there is a good chance that you have just enough variables to perform an analysis, but not too many which will make it hard to determine which variables to use.
         Therefore, we advice to reduce your dataset to less variables if your dataset is closer to 30 than 10 variables. 
         After all, the less variables the better (if they are meaningfull and unique).
         """)
@@ -52,7 +52,7 @@ def return_number_of_variables():
         
         ''')
 
-    st.markdown('### What if you desired variables are not visible?')
+    st.markdown('### What if your desired variables are not recorded?')
     st.markdown('''
     It could occur that while performing this step on your own computer, you notice that specific variables you are interested in are not visible.
     If this occurs, we advice to ask for help with another tool in our Di-Plast project, called the [Sensoring tool](https://share.streamlit.io/skz-digi/diplastsensorselection/updated/main.py).
