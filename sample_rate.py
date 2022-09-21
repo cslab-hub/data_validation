@@ -133,10 +133,10 @@ def return_sample_rate():
                 </div>""", unsafe_allow_html=True)
     
     st.markdown("""
-                For example, imagine that the dataset your interested in measures the total stock of a certain material.
-                It is ofcourse not neccesary to measure the total stock every second, especially of your stock data only changes every few hours on average.
-                However, when the pressure or temperature in an Extruder is to be analysed, more observations help alot!
-                Therefore, you shoul talk with your IT department for the best sample rate for your analysis goals!
+                For example, imagine that the dataset you're interested in measures the total stock of a certain material.
+                It is of course not necessary to measure the total stock every second, especially if your stock data only changes every few hours on average.
+                However, when the pressure or temperature in an extruder is to be analysed, more observations help a lot!
+                Therefore, you should talk with your IT department for the best sample rate for your analysis goals!
                 
                 """)
     
@@ -192,7 +192,7 @@ def return_sample_rate():
                 
                 In addition, it is also possible to change the sample rate in your dataset. 
                 Consider the following dataframe where each minute a sample is taken from a variable called 'Measure'.
-                This dataset could be reduced in size by taken the average of sequential rows, which is visible in Table in the following two tables: 
+                This dataset could be reduced in size by taking the average of sequential rows, which is visible in Table 4 and 5 in the following paragraph. 
                 """)
     
     st.title('How to improve')
