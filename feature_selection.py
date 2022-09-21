@@ -23,7 +23,7 @@ def return_feature_selection():
     st.markdown("""
     Correlation is a statistical term which refers to how close two variables have a linear relationship to each other.
     Variables that have a linear relationship tell us less about our dataset, since measuring one tells you something about the other.
-    In other words, if two variables have a high correlation, we can drop on of the two!
+    In other words, if two variables have a high correlation, we can drop one of the two!
     """)
     import pandas as pd
     # iris_correlation = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
@@ -40,6 +40,12 @@ def return_feature_selection():
                         ], overwrite=False)\
 
             .set_caption('Table 1.'))
+    
+    st.markdown("""
+    Here you can see a correlation table where a 1 means two variables correlate and 0 means they don't.
+    If you want to test this on your own data, try out the Data Analytics tool!         
+    """)
+    
     corr = iris_correlation.corr().round(2)
     corr.style.background_gradient(cmap='coolwarm')
     st.table(corr.style.background_gradient(cmap='coolwarm')\
@@ -116,7 +122,7 @@ def return_feature_selection():
     st.title('PCA Analysis')
     st.markdown('''
     Another technique to reduce the dimensionality of your dataset is by performing Principal Component Analysis.
-    PCA uses a set of large variables by combining them together to retain as much as information as possible.
+    PCA uses a set of large variables by combining them together to retain as much information as possible.
     PCA dates back to the 1990's and is one of the most widely used analysis techniques in Data Science.
     ''')
 
