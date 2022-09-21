@@ -7,7 +7,7 @@ from PIL import Image
 
 def return_missing_values():
     
-    html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/Data_Validation_DIPLAST/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
+    html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/data_validation/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
     # hide_table_row_index = """
     #         <style>
     #         tbody th {display:none}
@@ -226,7 +226,7 @@ def return_missing_values():
         st.markdown('')
         # st.image(image, width =75)
 
-        html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/Data_Validation_DIPLAST/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
+        html_arrow = """<p style="text-align:center"><img src="https://github.com/cslab-hub/data_validation/blob/main/images/down-arrow.png?raw=true" width="50"></p>"""
         st.write(html_arrow, unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1,6,1])
