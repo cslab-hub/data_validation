@@ -16,7 +16,7 @@ stone towards analyzing your data using the Data Analytics tool.
 
 
 
-Link to [Website](https://cslab-hub-data-validation-main-bx6ggw.streamlitapp.com/)
+Link to [Website](https://diplastdatavalidation.streamlitapp.com/)
 
 The Data Validation tool is funded by the Interreg North-West Europe program (Interreg NWE), project Di-Plast - Digital Circular Economy for the Plastics Industry (NWE729, https://www.nweurope.eu/projects/project-search/di-plast-digital-circular-economy-for-the-plastics-industry/). 
 
