@@ -18,8 +18,8 @@ def return_missing_values():
     When conclusions are drawn from these dataset, drastic errors can be made!
 
     In general there are 2 types of missing data:
-    - ###### Missing completely at random
-    - ###### Missing at Random
+    - Missing completely at random
+    - Missing at Random
     """)
 
     st.markdown('### Mising Completely at Random')
