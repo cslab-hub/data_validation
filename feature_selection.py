@@ -51,9 +51,9 @@ def return_feature_selection():
 
     st.title('PCA Analysis')
     st.markdown('''
-    Another technique to reduce the dimensionality of your dataset is by performing Principal Component Analysis.
+    Another technique to reduce the dimensionality of your dataset is by performing Principal Component Analysis (PCA).
     PCA uses a set of large variables by combining them together to retain as much information as possible.
-    PCA dates back to the 1990's and is one of the most widely used analysis techniques in Data Science.
+    PCA dates back to the 1990's and is one of the most widely used analysis techniques in Data Science and still counts as one of the leading algorithms for variable reduction. 
     ''')
 
     from sklearn.preprocessing import StandardScaler # for standardizing the Data
@@ -120,8 +120,8 @@ def return_feature_selection():
 
     st.markdown("#### Explanation")
     st.markdown("""
-    We can interpret the most important variables in the following way.
-    With help of only the GeneratorWinding1Temperature variable, we can already explain around 87\% of the variance in the dataset.
+    We can interpret the most important variables in the following way:
+    With help of only the GeneratorWinding1Temperature variable, we can already explain around 87/% of the variance in the dataset.
     And with help of adding ReactivePower, around 94\% can be explained. 
     Again, this analysis can be performed with you own dataset in the Data Analytics tool!
                 """)
