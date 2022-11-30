@@ -68,12 +68,12 @@ def return_descriptives():
 
     st.write('')
     st.markdown("""
-                It is possible to learn a lot about the dataset by inspecting these summary statistics.
-                For example, we can already see that the variable called: 'var4' does not deviate in measurement.
-                This could indicate that this variable does not provide any new information to us, we could remove it! \n
+                It is possible to learn the characteristics of the dataset by inspecting these summary statistics.
+                For example, if we look at Table 2, which is visualized below, we can already see that the variable called: 'var4' does not deviate in its measurements.
+                This could indicate that this variable does not provide any new information to us. Therefore this variable can be removed from the dataset.\n
 
-                Second, we can see that the Mean of Variable var2 is much higher than Var3 or var4. 
-                If this behavior is expected it is okay, but you should check every value to know what the variable represents.
+                Second, we can see that the mean of the variable 'var2' is much higher than 'var3' or 'var4'. 
+                If this behavior is expected, then it is okay. But, you should check every value to know what the variable represents.
                 """)
     col1, col2, col3 = st.columns([1,5,1])
     
@@ -106,8 +106,8 @@ def return_descriptives():
     st.markdown("""
                 A quick inspection of your dataset can also be performed by looking at Density plots of your data.
                 These density plots look at the distribution of all the values measured by a variable.
-                It could be helpfull to think about a 'safe' range of values where you expect a sensor's data to fall into.
-                If then these density plots show a complete different story, this could be an indication to check what is going on.
+                It could be helpful to think about a 'safe' range of values where you expect a sensor's data to fall into.
+                If the values of this variable deviate from the range of values when looking at the density plots, then it might be relevant to further inspect the data.
                 """)
 
     iris = pd.read_csv("https://raw.githubusercontent.com/uiuc-cse/data-fa14/gh-pages/data/iris.csv")
@@ -125,19 +125,17 @@ def return_descriptives():
     st.markdown('# Data types of variables')
     st.markdown("""
                 It is also possible to check the data types of your variables. 
-                Consider again Table 1 above in this page, here are the first two rows visualized in Table 2.
-                These values all are of different kinds. For example, 'var3' is measuring a numerical value with decimals.
-                On the other hand, 'var4' is measuring a numerical value of whole numbers. 
-                In addition, 'var5' is measuring a word which does not resemble numbers. 
-                \n
-                You should ask yourself wether some variables should remain in your dataset.
-                Most often, 'word' based variables often resembles categorical variables, which could be target variables you want to predict.
-                E.g., your data contains an variable with the values = ['damage','no-damage'], where you want to predict if your product had damage or not, based on sensor values.
-                In that case, you would like to keep this variable in your dataset.
-                However, if your data contains a variable with non-valuable categorial data, you could remove it.
-                It is, therefore, always up to you to decide what should remain and what should be removed!
-                """)
+                Consider Table 3, which is visualized below. The values of the variables are different from each other.
+                For example, 'var3' is measuring a numerical value with decimals, while 'var2' and 'var4' is measuring a numerical value of whole numbers.  
+                \n """)
 
+                # You should ask yourself whether some variables should remain in your dataset.
+                # Most often, 'word' based variables often resembles categorical variables, which could be target variables you want to predict.
+                # E.g., your data contains an variable with the values = ['damage','no-damage'], where you want to predict if your product had damage or not, based on sensor values.
+                # In that case, you would like to keep this variable in your dataset.
+                # However, if your data contains a variable with non-valuable categorial data, you could remove it.
+                # It is, therefore, always up to you to decide what should remain and what should be removed!
+               
 
     st.write(dataframe.head(2).style.set_table_styles([
                         {"selector":"caption",
@@ -190,14 +188,14 @@ def return_descriptives():
     Some variables might be easy to interpet, e.g., temperature.
     However, some variables are a combination of several units (pressure, rotation speeds).
     Here, errors are easier made if not taken caution.
-    For example, if the rotation per minute is measured but you think it means rotation per second, further on calculations could be wrongly interpreted.
+    For example, if the rotation per minute is measured but you think it means rotation per second, results from the analysis could be wrongly interpreted.
     Therefore:
     """)
 
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #ceeed8; border-color: #ceeed8;">
-                Tip: Create a seperate notebook/piece of paper where you write down the units of measurement for each variable.
+                Tip: Create a seperate notebook/piece of paper where you write down the units of measurement for each variable
                 </div>""", unsafe_allow_html=True)
 
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #ceeed8; border-color: #ceeed8;">
-                Bonus: Knowing the units of measurement makes it easier for colleagues to interpret your dataset.
+                Bonus: Knowing the units of measurement makes it easier for colleagues to interpret your dataset
                 </div>""", unsafe_allow_html=True)

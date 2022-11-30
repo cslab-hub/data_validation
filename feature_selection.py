@@ -32,7 +32,7 @@ def return_feature_selection():
     
     st.markdown("""
     Here you can see a correlation table where a 1 means two variables correlate and 0 means they don't.
-    If you want to test this on your own data, try out the Data Analytics tool!         
+    If you want to test this on your own data, try out the [Data Analytics tool](https://github.com/cslab-hub/DataAnalytics_Diplast)!         
     """)
     
     corr = iris_correlation.corr().round(2)
