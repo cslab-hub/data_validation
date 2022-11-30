@@ -8,7 +8,7 @@ def return_endresult():
     st.title('End result')
 
     st.markdown('''
-    The end result of your dataset should look like the following. \n
+    The end result of your dataset should look like the following: \n
     (1) There should be one variable that determines the time for all variables, please call this variable 'Time'. \n
     (2) All variables in your dataset should have a measurement at each moment in time of this "Time" variable, there are no missing values.
     ''')
@@ -30,7 +30,7 @@ def return_endresult():
                     "props":[("margin-left","auto"),("margin-right","auto")],
                     }
 
-                    ]).set_caption("Table 1: Dataset.")\
+                    ]).set_caption("Table 1: The Dataset.")\
                     .format(precision=2)\
                     .hide(axis='index')\
                     .to_html()           
@@ -39,7 +39,7 @@ def return_endresult():
 
 
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #fef4d5; border-color: #fef4d5;">
-                The Process Analytics tool expects this data format, in order to make it general for multiple companies to use.
+                The [Data Analytics tool](https://github.com/cslab-hub/DataAnalytics_Diplast) expects this data format, in order to make it general for multiple companies to use.
                 </div>""", unsafe_allow_html=True)
     
     col1,col2,col3 = st.columns([1,5,1])

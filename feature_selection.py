@@ -119,7 +119,7 @@ def return_feature_selection():
         st.write(f"{i + 1}th most important variable = {j}")
 
     st.markdown("#### Explanation")
-    st.markdown(f"""
+    st.markdown("""
     We can interpret the most important variables in the following way:
     With help of only the GeneratorWinding1Temperature variable, we can already explain around 87\% of the variance in the dataset.
     And with help of adding ReactivePower, around 94\% can be explained. 
