@@ -56,7 +56,7 @@ def return_sample_rate():
 
                         ], overwrite=False)\
 
-            .set_caption('Table 1. Random Dataset where each second an observation is recorded.')\
+            .set_caption('Table 1. Random Dataset where every second an observation is recorded.')\
             .set_table_styles({"Time" : [
                             {
                                 "selector" :"th",
@@ -129,14 +129,14 @@ def return_sample_rate():
     st.markdown("")
     # st.warning('It depends on your goal wheter or not every second or every 5 minutes is prefered')
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #fef4d5; border-color: #fef4d5;">
-                It depends on your goal wheter or not every second or every 5 minutes is prefered
+                It depends on your goal wheter or not every second or every 5 minutes is preferred
                 </div>""", unsafe_allow_html=True)
     
     st.markdown("""
                 For example, imagine that the dataset you're interested in measures the total stock of a certain material.
                 It is of course not necessary to measure the total stock every second, especially if your stock data only changes every few hours on average.
                 However, when the pressure or temperature in an extruder is to be analysed, more observations help a lot!
-                Therefore, you should talk with your IT department for the best sample rate for your analysis goals!
+                Therefore, you should talk with your data supplier for the best sample rate for your analysis goals!
                 
                 """)
     
@@ -204,7 +204,7 @@ def return_sample_rate():
     
     st.markdown("""
     Consider the following dataset where the Variable 'var1' measures a random variable that counts up.
-    However, it could be that the dataset is way to big, and needs some resampling to reduce the number of observations.
+    However, it could be that the dataset is way too big, and needs some resampling to reduce the number of observations.
     Therefore, a technique called 'resampling' takes the average value for some time periods to reduce the dataset.
     """)
 

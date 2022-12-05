@@ -13,7 +13,7 @@ def return_missing_values():
 
     st.markdown("""
     Missing data can be a serious issue for the quality of your dataset.
-    But what do we mean by missing? Missing data means that one or more variables in your dataset have values missing that contain nothing, -999, nan or nul.
+    But what do we mean by missing? Missing data means that one or more variables in your dataset have values missing that contain nothing, -999, nan or null.
     These values most often originate from wrong data collection, a lack of data, or errors when entering data. 
     When conclusions are drawn from these dataset, drastic errors can be made!
 
@@ -44,7 +44,7 @@ def return_missing_values():
     df = df.iloc[0:,:]
 
     st.write("""<div style="padding: 15px; text-align:center; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px;  background-color: #ffdbdb; border-color: #ffbebe;">
-                Bad Example 1: There are  various missing values scattered around your dataset.
+                Bad Example 1: There are various missing values scattered around your dataset.
                 </div>""", unsafe_allow_html=True)
 
 
@@ -121,7 +121,7 @@ def return_missing_values():
     st.markdown('### Missing at Random')
     st.markdown("""
     When data is missing at random, the missing data is only caused by other variables in the dataset. 
-    For example, it could occur that one variable in your dataset did not measure correctly every timepoint. 
+    For example, it could occur that one variable in your dataset did not measure correctly for every timepoint. 
     However, this is caused because another variable started recording earlier, so this 'missing' of the data is caused by the other variable measuring earlier.
     In this case, we advice to remove all the observations where even a single variable measured nothing, in order to prevent errors in the future analysis.\n
     """)

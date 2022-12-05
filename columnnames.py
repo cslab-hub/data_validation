@@ -5,11 +5,10 @@ from PIL import Image
 
 def return_column_names():
 
-    st.title('Open the dataset in your program by choice. What do the variable names look like?')
+    st.title('Start with opening the data file in the program of your choosing (e.g., SublimeText, Microsoft Excel) . What do the variable names look like?')
     
     st.markdown("""
-    Notice the black bar highlighting the names of the variables in Table 1.
-    Take a look your dataset in your own program (SublimeTexts, Microsoft Excel).
+    Notice the black bar highlighting the names of the variables in Table 1. Now take a look at your own dataset. 
     
     """)
 
@@ -42,6 +41,7 @@ def return_column_names():
 
 
     option = st.selectbox(
+
         'How do your variable names look like?',
         ['','Ex1Var1_01','Heat_sensor1','Drehzalh01',"heatsensor,1",'No Variable Names'],format_func=lambda x: 'Select an option' if x == '' else x)
     
@@ -107,8 +107,8 @@ def return_column_names():
                         , unsafe_allow_html=True)
         
         st.markdown('')
-        st.success('Your column names are of great quality!')
-        st.markdown("Your data contains easy to read variables and are interpretable for anybody.")
+        st.success('Your column names are of great quality! The data contains easy to read variables and are interpretable for anybody.')
+        # st.markdown("Your data contains easy to read variables and are interpretable for anybody.")
         
     if option == 'Drehzalh01':
         st.write(pd.DataFrame({
@@ -138,7 +138,7 @@ def return_column_names():
                         , unsafe_allow_html=True)
         
         st.markdown('')
-        st.warning('Your column are identifyable, but English names are easier to interpet')
+        st.warning('Your columns are identifyable, but English names are easier to interpet')
 
 
     if option == 'No Variable Names':
@@ -151,7 +151,7 @@ def return_column_names():
         
         st.warning("""Your data contains columns but are not identifyable by name.
                    Ask your data supplier for specific information about what each column/variable measures.
-                   This is necessary, since it is now not possible to interpret the data, since you do not know what each variable represents.
+                   This is necessary, since it is now not possible to interpret the data because you do not know what each variable represents.
                    """)
     
     if option == 'heatsensor,1':
@@ -160,7 +160,7 @@ def return_column_names():
         e_dataframe.columns = ['heatsensorA,1','heatsensorB,2']
         
         
-        st.error("""Your dataset could be read wronly if the delimiter of your dataset is a comma.
+        st.error("""Your dataset could be interpreted wrongly if the delimiter of your dataset is a comma.
         What then happens is that the dataset will be split into the following dataset:
                    """)
 

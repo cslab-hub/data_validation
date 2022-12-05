@@ -147,7 +147,7 @@ def return_outliers():
     st.markdown("""
     These outliers occur when small weird instances happen in a process.
     These errors mostly consist of one or more single instances that deviate from the rest of the data entirely or from its direct neighbours.
-    Techniques to spot them are via checking them against the distribution of a variable, or locally by looking at its direct neighbours.
+    Techniques to spot them are to check the values against the distribution of a variable, or locally by looking at its direct neighbours.
 
 
     As an example, Imagine you have a dataset with the following data:\n              
@@ -177,8 +177,8 @@ def return_outliers():
                         , unsafe_allow_html=True)
 
     st.markdown("""
-                It is hard to spot wether something is wrong with this dataset by looking at it in a table manner. 
-                Therefore, if we plot the data, something different becomes visible:         
+                It is hard to spot whether something is wrong with this dataset by looking at it in a tabular manner. 
+                Therefore, if we plot the data, something different becomes visible in Figure 1:         
                 """)
     
     st.pyplot(fig1)
@@ -193,7 +193,7 @@ def return_outliers():
     st.pyplot(first_fig)
 
     st.markdown("""
-                The following Figure shows the same data, but with the outliers removed:        
+                Figure 2 shows the same data, but with the outliers removed:        
                 """)
     st.pyplot(third_fig)
 
@@ -206,13 +206,13 @@ def return_outliers():
 
     st.markdown('### Pattern-wise Outliers')
     st.markdown('''
-    Pattern-wise outliers always consist of a subsequence of observations in your data that behave differently.
+    Pattern-wise outliers always consists of a subsequence of observations in your data that behave differently.
     So instead of a few observations, pattern-wise outliers could consists of 100 observations that deviate.
     
     ''')
     
     st.pyplot(pattern_wise_fig)
-    st.markdown('Notice that by removing these observasions also influenced the x-axis of the plot, because observations are removed.')
+    st.markdown('Notice that by removing these observations, it also influenced the x-axis of the plot, because observations are removed.')
     st.pyplot(pattern_wise_figure_2)
 
 
