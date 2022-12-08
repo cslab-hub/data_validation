@@ -18,6 +18,7 @@ from feature_selection import *
 from endresult import *
 from interactive_test import *
 
+
 # from streamlit_option_menu import option_menu
 
 st.set_page_config(
@@ -27,6 +28,8 @@ st.set_page_config(
     layout='centered'
     #  initial_sidebar_state="expanded",
 )
+with open( "style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 st.sidebar.image("images/logo.jpeg", use_column_width=True)
 
