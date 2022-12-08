@@ -16,7 +16,6 @@ from outliers import *
 from missingvalues import *
 from feature_selection import *
 from endresult import *
-from interactive_test import *
 
 
 # from streamlit_option_menu import option_menu
