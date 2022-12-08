@@ -15,8 +15,7 @@ you tips and tricks how and what to adjust for improving the overall quality of 
 stone towards analyzing your data using the Data Analytics tool.
 
 
-
-Link to [Website](https://diplastdatavalidation.streamlitapp.com/)
+This repository can be used to learn about validating your data as described in the Di-Plast project. To use the tool, please carefully read the descriptions written in the .docx file.
 
 The Data Validation tool is funded by the Interreg North-West Europe program (Interreg NWE), project Di-Plast - Digital Circular Economy for the Plastics Industry (NWE729, https://www.nweurope.eu/projects/project-search/di-plast-digital-circular-economy-for-the-plastics-industry/). 
 
