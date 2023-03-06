@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 from PIL import Image 
 import matplotlib.pyplot as plt 
+from sklearn.preprocessing import StandardScaler # for standardizing the Data
+from sklearn.decomposition import PCA # for PCA calculation
 
 # from statsmodels.tsa.stattools import grangercausalitytests
 
@@ -16,7 +18,6 @@ def return_feature_selection():
     Variables that have a linear relationship tell us less about our dataset, since measuring one tells you something about the other.
     In other words, if two variables have a high correlation, we can drop one of the two!
     """)
-    import pandas as pd
     iris_correlation = pd.read_csv('data/iris.csv')
     iris_correlation.insert(0,'Time', pd.date_range(start='1/1/2018', periods=iris_correlation.shape[0], freq='T'))
     iris_correlation.columns = ['Time','temperature1','temperature2','temperature3','temperature4']
@@ -56,10 +57,7 @@ def return_feature_selection():
     PCA dates back to the 1990's and is one of the most widely used analysis techniques in Data Science and still counts as one of the leading algorithms for variable reduction. 
     ''')
 
-    from sklearn.preprocessing import StandardScaler # for standardizing the Data
-    from sklearn.decomposition import PCA # for PCA calculation
 
-    import pandas as pd
     df = pd.read_csv('data/Turbine_Data.csv', parse_dates=["Unnamed: 0"])
     df['DateTime'] = df['Unnamed: 0'] 
     df.drop('Unnamed: 0', axis=1, inplace=True)
