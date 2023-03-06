@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image 
 import matplotlib.pyplot as plt 
 
-from statsmodels.tsa.stattools import grangercausalitytests
+# from statsmodels.tsa.stattools import grangercausalitytests
 
 def return_feature_selection():
     
