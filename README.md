@@ -17,6 +17,8 @@ stone towards analyzing your data using the Data Analytics tool.
 
 This repository can be used to learn about validating your data as described in the Di-Plast project. To use the tool, please carefully read the descriptions written in the .docx file.
 
+The tool can be accessed using the following link: https://diplastdatavalidation.streamlit.app.
+
 The Data Validation tool is funded by the Interreg North-West Europe program (Interreg NWE), project Di-Plast - Digital Circular Economy for the Plastics Industry (NWE729, https://www.nweurope.eu/projects/project-search/di-plast-digital-circular-economy-for-the-plastics-industry/). 
 
 
